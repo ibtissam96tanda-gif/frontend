@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { COLLECTIONS } from "@/lib/catalog";
-import ComingSoon from "@/components/ui/ComingSoon";
+import { CATALOG, COLLECTIONS } from "@/lib/catalog";
+import ProductCard from "@/components/ui/ProductCard";
 
 const FAQS = [
   {
@@ -29,11 +29,11 @@ export default function HomePage() {
           <p className="text-burgundy-500 tracking-[0.3em] text-xs uppercase mb-4">TANDA BRAND · المغرب</p>
           <h1 className="font-display text-[2.35rem] sm:text-5xl md:text-7xl text-ink leading-tight">فن الأنوثة العصرية</h1>
           <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            اكتشفي مجموعة الخريف والشتاء — قريباً بعد التصوير.
+            مجموعة الخريف — توصيل مجاني والدفع عند الاستلام.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="bg-burgundy-500 hover:bg-burgundy-600 text-cream font-bold px-10 py-4 rounded-2xl">
-              أبقي على اطلاع
+            <Link href="/collections" className="bg-burgundy-500 hover:bg-burgundy-600 text-cream font-bold px-10 py-4 rounded-2xl">
+              تسوّقي الآن
             </Link>
             <Link href="/about" className="border border-burgundy-200 text-burgundy-700 font-bold px-10 py-4 rounded-2xl bg-white/70">
               قصتنا
@@ -52,8 +52,18 @@ export default function HomePage() {
       </section>
 
       <section className="max-w-6xl mx-auto px-4 py-16">
+        <h2 className="font-display text-3xl text-center mb-2">منتجاتنا</h2>
+        <p className="text-center text-gray-500 mb-10">اختاري القطعة وأكملي الطلب</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {CATALOG.map((product) => (
+            <ProductCard key={product.slug} product={product} />
+          ))}
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-4 pb-16">
         <h2 className="font-display text-3xl text-center mb-2">مجموعاتنا</h2>
-        <p className="text-center text-gray-500 mb-10">الخريف والشتاء — قريباً</p>
+        <p className="text-center text-gray-500 mb-10">الخريف والشتاء</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
           {COLLECTIONS.map((c) => (
             <Link
@@ -66,10 +76,6 @@ export default function HomePage() {
             </Link>
           ))}
         </div>
-      </section>
-
-      <section className="max-w-6xl mx-auto px-4 pb-16">
-        <ComingSoon />
       </section>
 
       <section className="bg-white py-16 px-4">

@@ -94,8 +94,8 @@ export const SIZE_GUIDE: SizeRow[] = [
 ];
 
 export const COLLECTIONS: Collection[] = [
-  { slug: "autumn", name_ar: "الخريف", tagline: "قريباً — بعد تصوير المجموعة" },
-  { slug: "winter", name_ar: "الشتاء", tagline: "قريباً — بعد تصوير المجموعة" },
+  { slug: "autumn", name_ar: "الخريف", tagline: "طقم شفشاون، فستان أوداية، تونيك الرباط" },
+  { slug: "winter", name_ar: "الشتاء", tagline: "قطع إضافية قريباً" },
 ];
 
 export const OFFERS = [
